@@ -17,5 +17,7 @@ spring:
       - id: rvy-customer-service
         uri: lb://rvy-customer-service
         predicates:
-          - Path=/cm/v1/**         
+          - Path=/foo/** 
+        filters:
+          - StripPrefix=2         
           
