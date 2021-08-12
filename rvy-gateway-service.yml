@@ -1,0 +1,28 @@
+server:
+  port: 8999
+
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: rvy-customer-service
+        uri: lb://rvy-customer-service
+        predicates:
+          - Path=/cm/**
+      - id: rvy-product-service
+        uri: lb://rvy-product-service
+        predicates:
+          - Path=/pms/**
+      - id: rvy-user-service
+        uri: lb://rvy-user-service
+        predicates:
+          - Path=/v1/**
+      - id: rvy-oauth-service
+        uri: lb://rvy-oauth-service
+        predicates:
+          - Path=/rvy/**       
