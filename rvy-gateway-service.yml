@@ -13,8 +13,7 @@ spring:
       - id: rvy-customer-service
         uri: lb://rvy-customer-service
         predicates:
-          - Path=/rvy/api/**
-          
+          - Path=/rvy/api/**       
       - id: rvy-product-service
         uri: http://localhost:8081/
         predicates:
