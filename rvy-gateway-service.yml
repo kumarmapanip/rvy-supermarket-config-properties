@@ -10,14 +10,26 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: rvy-product-service
-        uri: lb://rvy-product-service
-        predicates:
-          - Path=/rvy/api/**
       - id: rvy-customer-service
         uri: lb://rvy-customer-service
         predicates:
-          - Path=/foo/** 
+          - Path=/rvy/api/**
+      - id: rvy-product-service
+        uri: lb://rvy-product-service
+        predicates:
+          - Path=/ps/** 
         filters:
-          - StripPrefix=2         
+          - StripPrefix=1
+      - id: rvy-user-service
+        uri: lb://rvy-user-service
+        predicates:
+          - Path=/us/** 
+        filters:
+          - StripPrefix=1 
+      - id: rvy-oauth-service
+        uri: lb://rvy-oauth-service
+        predicates:
+          - Path=/oas/** 
+        filters:
+          - StripPrefix=1           
           
