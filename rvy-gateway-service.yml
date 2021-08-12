@@ -10,19 +10,7 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: rvy-customer-service
-        uri: lb://rvy-customer-service
+      - id: customer-service
+        uri: http://localhost:9003/
         predicates:
-          - Path=/cc/**
-      - id: rvy-product-service
-        uri: lb://rvy-product-service
-        predicates:
-          - Path=/pms/**
-      - id: rvy-user-service
-        uri: lb://rvy-user-service
-        predicates:
-          - Path=/v1/**
-      - id: rvy-oauth-service
-        uri: lb://rvy-oauth-service
-        predicates:
-          - Path=/rvy/**       
+          - Path=/rvy/api/**      
