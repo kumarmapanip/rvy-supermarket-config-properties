@@ -11,6 +11,6 @@ spring:
     gateway:
       routes:
       - id: rvy-customer-service
-        uri: http://localhost:9003/
+        uri: lb://rvy-customer-service
         predicates:
-          - Path=/rvy/api/**      
+          - Path=/rvy/api/**    
