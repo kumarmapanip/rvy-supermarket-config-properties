@@ -9,8 +9,8 @@ eureka:
 spring:
   cloud:
     gateway:
-      routes:      
+      routes:
       - id: rvy-product-service
-        uri: http://localhost:8081/
+        uri: lb://rvy-product-service
         predicates:
-          - Path=/rvy/api/**     
+          - Path=/rvy/api/**
