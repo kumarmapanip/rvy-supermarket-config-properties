@@ -16,16 +16,6 @@ spring:
           - Path=/rvy/api/**
           
       - id: rvy-product-service
-        uri: lb://rvy-product-service
+        uri: http://localhost:8081/
         predicates:
-          - Path=/rvy/api/**      
-
-      - id: rvy-user-service
-        uri: lb://rvy-user-service
-        predicates:
-          - Path=/rvy/um/**
-          
-      - id: rvy-oauth-service
-        uri: lb://rvy-oauth-service
-        predicates:
-          - Path=/** 
+          - Path=/rvy/api/**     
