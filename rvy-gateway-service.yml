@@ -17,5 +17,5 @@ spring:
       - id: rvy-customer-service
         uri: lb://rvy-customer-service
         predicates:
-          - Path=/rvy/**         
+          - Path=/cm/v1/**         
           
