@@ -1,7 +1,5 @@
 server:
   port: 9005
-
-server:
   servlet:
     contextPath: /rvy/api
   
